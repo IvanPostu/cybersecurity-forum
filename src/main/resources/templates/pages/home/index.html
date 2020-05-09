@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/main-layout :: layout(~{::title}, 
+  ~{::section#homepageID} )}">
+
+
+<title>Home page - Cybersecurity forum</title>
+
+<body>
+
+  <section id="homepageID">
+    <div th:replace="fragments/jumbotrons/header-jumbotron :: jumbotron"></div>
+    <h1>Homepage</h1>
+  </section>
+
+</body>
+
+
+</html>

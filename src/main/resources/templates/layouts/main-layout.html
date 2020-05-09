@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="layout (title, content)"
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:replace="${title}">Cybersecurity-forum</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
+</head>
+<body>
+  <th:block th:replace="fragments/navbars/header-navbar :: navbar"></th:block>
+
+  <div th:replace="${content}"></div>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+</html>
