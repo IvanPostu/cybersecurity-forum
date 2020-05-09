@@ -7,11 +7,18 @@
   <title th:replace="${title}">Cybersecurity-forum</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/mdb.min.css">
+  <style>
+    body{
+      background: rgb(214, 214, 214);
+    }
+  </style>
 </head>
 <body>
-  <th:block th:replace="fragments/navbars/header-navbar :: navbar"></th:block>
+  <th:block th:replace="layouts/main/header-navbar-fragment :: navbar"></th:block>
 
   <div th:replace="${content}"></div>
+
+  <th:block th:replace="layouts/main/footer-fragment :: footer"></th:block>
 
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/popper.min.js"></script>

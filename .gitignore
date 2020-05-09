@@ -34,7 +34,7 @@ node_modules
 *.class
 *.jar
 uploads
-pg_databases
+pg_data
 *.log
 src/main/resources/static
 src/main/resources/templates
