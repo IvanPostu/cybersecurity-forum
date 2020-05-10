@@ -1,14 +1,49 @@
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/main/index :: layout(~{::title}, 
-  ~{::section#homepageID} )}">
+  ~{::div#loginpageID} )}">
 
 
 <title>Login - Index</title>
 
 <body>
 
-  <section id="homepageID">
-    <h1>Login page</h1>
-  </section>
+  <div id="loginpageID" class="container my-3 ">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6">
+
+        <form class="text-center border border-light p-5 grey lighten-5 rounded" action="#!">
+
+          <p class="h4 mb-4">Sign in</p>
+
+          <input type="email" id="defaultLoginFormEmail" 
+            class="form-control mb-4" placeholder="E-mail">
+
+          <input type="password" id="defaultLoginFormPassword" 
+            class="form-control mb-4" placeholder="Password">
+
+          <div class="d-flex justify-content-around">
+            <div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <div>
+              <a href="">Forgot password?</a>
+            </div>
+          </div>
+
+          <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+          <p>Not a member?
+            <a href="">Register</a>
+          </p>
+         
+        </form>
+      </div>
+    </div>
+  </div>
 
 </body>
 
