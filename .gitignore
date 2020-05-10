@@ -36,11 +36,6 @@ node_modules
 uploads
 pg_data
 *.log
-src/main/resources/static
-src/main/resources/templates
-frontend_build
-frontend/libraries
-
 
 .gradle
 !gradle/wrapper/gradle-wrapper.jar
@@ -48,8 +43,5 @@ frontend/libraries
 !**/src/test/**
 
 out/
-
-### assembled frontend ###
-/src/main/resources/static
-/src/main/resources/templates/generated.html
-**/rest-client-test
+/src/main/resources/static/libs/node_modules
+/src/main/resources/static/libs/package-lock.json
