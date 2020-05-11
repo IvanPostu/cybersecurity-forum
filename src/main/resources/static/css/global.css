@@ -1,0 +1,11 @@
+[v-cloak]{
+  display: none;
+}
+
+body{
+  background: rgb(233, 233, 233);
+}
+
+main{
+  min-height: 100vh;
+}

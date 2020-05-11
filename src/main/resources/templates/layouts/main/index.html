@@ -1,37 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="layout (title, content)"
+<html lang="en" th:fragment="layout (title, content, script)"
   xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title th:replace="${title}">Cybersecurity-forum</title>
 
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
-  <link rel="stylesheet" href="libs/mdbootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="libs/mdbootstrap/css/mdb.min.css">
-  <link rel="stylesheet" href="libs/@fortawesome/fontawesome-free/css/all.min.css">
-
-  <script type="text/javascript" src="libs/turbolinks/dist/turbolinks.js"></script>
-  <script defer type="text/javascript" src="libs/mdbootstrap/js/jquery.min.js"></script>
-  <script defer type="text/javascript" src="libs/mdbootstrap/js/popper.min.js"></script>
-
+  <th:block th:replace="layouts/main/libraries-fragment :: header"></th:block>
 </head>
 <body>
   <th:block th:replace="layouts/main/header-navbar-fragment :: navbar"></th:block>
 
-  <div th:replace="${content}"></div>
+  <main>
+    <div th:replace="${content}"></div>
+  </main>
 
   <th:block th:replace="layouts/main/footer-fragment :: footer"></th:block>
-
-  <script>
-    document.addEventListener("turbolinks:load", function() {
-      var bootstrapLibJs = document.createElement("script");
-      bootstrapLibJs.src = "libs/mdbootstrap/js/bootstrap.min.js";
-      var mdbootstrapLibJs = document.createElement("script");
-      mdbootstrapLibJs.src = "libs/mdbootstrap/js/mdb.min.js";
-      document.body.appendChild(bootstrapLibJs, mdbootstrapLibJs);
-    });
-  </script>
+  <script th:replace="${script}"></script>
 </body>
 </html>

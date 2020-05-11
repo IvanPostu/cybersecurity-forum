@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/main/index :: layout(~{::title}, 
-  ~{::section#homepageID} )}">
+  ~{::section#homepageID}, ~{::script} )}">
 
 
 <title>Home page - Cybersecurity forum</title>
@@ -12,9 +12,9 @@
     <div class="container">
       <div th:replace="pages/home/main-card-fragment :: main-card"></div>
     </div>
-
-
   </section>
+
+  <script></script>
 
 </body>
 

@@ -1,0 +1,16 @@
+debug: false
+
+spring:
+  profiles: 
+    active: PROD
+  thymeleaf: 
+    cache: true
+  datasource:
+    url: jdbc:postgresql://127.0.0.1/app_db
+    username: postgres
+    password: qwerty
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    # hibernate:
+    #   ddl-auto: create

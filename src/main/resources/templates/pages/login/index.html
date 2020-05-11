@@ -1,23 +1,39 @@
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layouts/main/index :: layout(~{::title}, 
-  ~{::div#loginpageID} )}">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" 
+th:replace="~{layouts/main/index :: layout(~{::title}, ~{::div#signInPageId}, 
+~{::script} )}">
 
 
-<title>Login - Index</title>
+<title>Sign in</title>
 
 <body>
 
-  <div id="loginpageID" class="container my-3 ">
-    <div class="row justify-content-center">
+  <div id="signInPageId" class="container my-3 ">
+
+    <div th:if="${param.error}">
+      Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+      You have been logged out.
+    </div>
+    <form th:action="@{/login}" method="post">
+      <div><label> User Name : <input type="text" name="username" /> </label></div>
+      <div><label> Password: <input type="password" name="password" /> </label></div>
+      <div><input type="submit" value="Sign In" /></div>
+    </form>
+
+    <!-- <div class="row justify-content-center">
       <div class="col-12 col-md-6">
 
-        <form class="text-center border border-light p-5 grey lighten-5 rounded" action="#!">
+        <form class="text-center border border-light p-5 grey lighten-5 rounded" 
+          th:action="@{/login}" method="POST">
 
           <p class="h4 mb-4">Sign in</p>
 
-          <input type="email" id="defaultLoginFormEmail" 
+          <input name="username"  id="usernameFormInput" 
             class="form-control mb-4" placeholder="E-mail">
 
-          <input type="password" id="defaultLoginFormPassword" 
+          <input name="password" type="password" id="passwordFormInput" 
             class="form-control mb-4" placeholder="Password">
 
           <div class="d-flex justify-content-around">
@@ -42,8 +58,10 @@
          
         </form>
       </div>
-    </div>
+    </div> -->
   </div>
+
+  <script></script>
 
 </body>
 

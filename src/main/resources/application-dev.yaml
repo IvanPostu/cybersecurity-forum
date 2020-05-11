@@ -1,11 +1,10 @@
 debug: true
 
-
 spring:
   profiles: 
     active: DEV
-  # thymeleaf: 
-  #   cache: false
+  thymeleaf: 
+    cache: false
   datasource:
     url: jdbc:postgresql://127.0.0.1/app_db
     username: postgres
@@ -13,5 +12,5 @@ spring:
   jpa:
     generate-ddl: true
     show-sql: true
-    hibernate:
-      ddl-auto: validate
+    # hibernate:
+    #   ddl-auto: create
