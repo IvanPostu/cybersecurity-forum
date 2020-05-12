@@ -22,6 +22,12 @@
 	<dependencies>
 
     <dependency>
+      <groupId>com.github.cage</groupId>
+      <artifactId>cage</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 			<version>6.2.2</version>

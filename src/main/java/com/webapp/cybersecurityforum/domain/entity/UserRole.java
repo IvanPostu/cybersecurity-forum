@@ -15,7 +15,7 @@ import lombok.Getter;
 @Entity
 @Table(name="user_role")
 @Getter
-public class UserRole {
+public final class UserRole {
 
   private enum Role implements GrantedAuthority, Cloneable {
     USER,

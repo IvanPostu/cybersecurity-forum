@@ -9,7 +9,7 @@
 
   <div id="signupPageId" class="container my-3" v-cloak>
     <div class="row justify-content-center">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
 
         <form class="text-center border border-light p-5 grey lighten-5 rounded" th:action="@{/sign-up}" method="POST">
 
@@ -17,15 +17,18 @@
 
           <div class="form-row mb-4">
             <div class="col">
-              <input th:value="${firstName}" name="firstName" type="text" id="fNameId" class="form-control" placeholder="First name" autocomplete="off">
+              <input th:value="${firstName}" name="firstName" type="text" id="fNameId" class="form-control"
+                placeholder="First name" autocomplete="off">
             </div>
             <div class="col">
-              <input th:value="${lastName}" name="lastName" type="text" id="lNameId" class="form-control" placeholder="Last name" autocomplete="off">
+              <input th:value="${lastName}" name="lastName" type="text" id="lNameId" class="form-control"
+                placeholder="Last name" autocomplete="off">
             </div>
           </div>
 
-          <input th:value="${email}" ref="emailFormInput" name="email" id="registerEmail" th:class="'form-control '+(${emailError!=null}?'is-invalid':'')"
-            placeholder="E-mail" type="text" required autocomplete="off">
+          <input th:value="${email}" ref="emailFormInput" name="email" id="registerEmail"
+            th:class="'form-control '+(${emailError!=null}?'is-invalid':'')" placeholder="E-mail" type="text" required
+            autocomplete="off">
           <div th:if="${emailError!=null}" th:text="${emailError}" ref="errorMsgEmail" class="invalid-feedback">
           </div>
 
@@ -36,10 +39,26 @@
             class="invalid-feedback">
           </div>
 
+          <div class="col-md-8 offset-md-2 mt-4 mb-2">
+            <img ref="captchaImg" class="img-fluid d-none" src="" />
+            <div ref="captchaLoad" class="text-center d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <button v-on:click="fetchCaptcha" type="button" class="btn btn-sm btn-blue-grey">
+              Reset captcha image
+            </button>
+          </div>
+
+          <input ref="captchaFormInput" name="captcha"
+            th:class="'form-control '+(${captchaError!=null}?'is-invalid':'')" placeholder="Captcha" type="captcha"
+            required autocomplete="off">
+          <div th:if="${captchaError!=null}" th:text="${captchaError}" ref="errorMsgCaptcha" class="invalid-feedback">
+          </div>
+
           <button class="btn btn-info my-4 btn-block" type="submit">Sign up</button>
-
           <hr>
-
           <p>By clicking
             <em>Sign up</em> you agree to our
             <a href="#" target="_blank">terms of service</a>

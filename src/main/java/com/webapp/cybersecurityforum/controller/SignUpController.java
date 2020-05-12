@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import com.webapp.cybersecurityforum.domain.dto.SaveUserDto;
 import com.webapp.cybersecurityforum.domain.entity.UserEntity;
 import com.webapp.cybersecurityforum.domain.entity.UserRole;
+import com.webapp.cybersecurityforum.service.CaptchaService;
 import com.webapp.cybersecurityforum.service.UserService;
 
 import org.slf4j.Logger;
@@ -28,6 +29,9 @@ public class SignUpController {
 
   @Autowired
   private UserService userService;
+
+  @Autowired
+  private CaptchaService captchaService;
 
   @GetMapping(value = "/sign-up")
   public String getSignUpPage(){
