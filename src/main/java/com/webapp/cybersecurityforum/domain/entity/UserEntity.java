@@ -21,6 +21,7 @@ import javax.validation.constraints.NotBlank;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,7 +29,8 @@ import lombok.Setter;
 @Table(name="app_user")
 @Getter
 @Setter
-public class User implements UserDetails {
+@Builder()
+public class UserEntity implements UserDetails {
 
   private static final long serialVersionUID = -8427025120500985305L;
 
@@ -93,7 +95,7 @@ public class User implements UserDetails {
   public boolean equals(Object o) {
     if(this == o) return true;
     if(o == null || this.getClass() != o.getClass()) return false;
-    User user = (User)o;
+    UserEntity user = (UserEntity)o;
     return user.getId().equals(this.getId());
   }
 

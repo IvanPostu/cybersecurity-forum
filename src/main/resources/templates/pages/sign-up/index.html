@@ -17,14 +17,14 @@
 
           <div class="form-row mb-4">
             <div class="col">
-              <input name="firstName" type="text" id="fNameId" class="form-control" placeholder="First name">
+              <input th:value="${firstName}" name="firstName" type="text" id="fNameId" class="form-control" placeholder="First name">
             </div>
             <div class="col">
-              <input name="lastName" type="text" id="lNameId" class="form-control" placeholder="Last name">
+              <input th:value="${lastName}" name="lastName" type="text" id="lNameId" class="form-control" placeholder="Last name">
             </div>
           </div>
 
-          <input ref="emailFormInput" name="email" id="registerEmail" th:class="'form-control '+(${emailError!=null}?'is-invalid':'')"
+          <input th:value="${email}" ref="emailFormInput" name="email" id="registerEmail" th:class="'form-control '+(${emailError!=null}?'is-invalid':'')"
             placeholder="E-mail" type="text" required>
           <div th:if="${emailError!=null}" th:text="${emailError}" ref="errorMsgEmail" class="invalid-feedback">
           </div>

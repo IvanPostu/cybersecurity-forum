@@ -8,26 +8,25 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication implements CommandLineRunner {
+public class Main implements CommandLineRunner {
 
-  private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
+  private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-  @Value("${debug}")
-  private Boolean isDebug;
+  @Value("${spring.profiles.active}")
+  private String profiles;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(Main.class, args);
   }
 
   @Override
   public void run(String... args) throws Exception {
-    if(isDebug){
+    if(profiles.contains("DEV")){
       logger.info("Application is running in DEBUG mode.");
-    }else{
+    }
+    if(profiles.contains("PROD")){
       logger.info("Application is running in PRODUCTION mode.");
     }
   }
-  
-  
 
 }

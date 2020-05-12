@@ -15,7 +15,7 @@
 </th:block>
 
 <body>
-  <th:block th:with="isDebug=${@environment.getProperty('debug')}">
+  <th:block th:with="isDebug=${@environment.getProperty('spring.profiles.active')=='DEV'}">
     <th:block th:fragment="header">
       <th:block th:if="isDebug">
         <th:block th:replace="::header-common"></th:block>

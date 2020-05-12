@@ -1,8 +1,9 @@
 package com.webapp.cybersecurityforum.domain.dto;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.Length;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,7 @@ public class SaveUserDto {
   @NotBlank(message = "Email cannot be empty.")
   private String email;
 
-  @Min(value = 6, message = "Minimum password length 6 characters.")
+  @Length(min = 6, max = 20, message = "Password length must be at least 6 and not more than 20")
   @NotBlank(message = "Password cannot be empty.")
   private String password;
 
