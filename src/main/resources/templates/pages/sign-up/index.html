@@ -17,21 +17,21 @@
 
           <div class="form-row mb-4">
             <div class="col">
-              <input th:value="${firstName}" name="firstName" type="text" id="fNameId" class="form-control" placeholder="First name">
+              <input th:value="${firstName}" name="firstName" type="text" id="fNameId" class="form-control" placeholder="First name" autocomplete="off">
             </div>
             <div class="col">
-              <input th:value="${lastName}" name="lastName" type="text" id="lNameId" class="form-control" placeholder="Last name">
+              <input th:value="${lastName}" name="lastName" type="text" id="lNameId" class="form-control" placeholder="Last name" autocomplete="off">
             </div>
           </div>
 
           <input th:value="${email}" ref="emailFormInput" name="email" id="registerEmail" th:class="'form-control '+(${emailError!=null}?'is-invalid':'')"
-            placeholder="E-mail" type="text" required>
+            placeholder="E-mail" type="text" required autocomplete="off">
           <div th:if="${emailError!=null}" th:text="${emailError}" ref="errorMsgEmail" class="invalid-feedback">
           </div>
 
           <input ref="passwordFormInput" name="password" id="registerPassword"
             th:class="'mt-4 form-control '+(${passwordError!=null}?'is-invalid':'')" placeholder="Password"
-            type="password" required>
+            type="password" required autocomplete="off">
           <div th:if="${passwordError!=null}" th:text="${passwordError}" ref="errorMsgPassword"
             class="invalid-feedback">
           </div>

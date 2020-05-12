@@ -1,5 +1,5 @@
 package com.webapp.cybersecurityforum.controller;
-
+ 
 import java.util.Collections;
 import java.util.HashSet;
 
@@ -50,18 +50,11 @@ public class SignUpController {
       logger.debug("Sign up dto is not valid", userDto);
       return "pages/sign-up/index";
     }else{
-      UserEntity user = UserEntity
-        .builder()
-        .active(true)
-        .email(userDto.getEmail())
-        .password(userDto.getPassword())
-        .roles(new HashSet<UserRole>(){
-          {
-            add(UserRole.USER);
-            add(UserRole.ADMIN);
-          }
-        })
-        .build();
+      UserEntity user = new UserEntity();
+      user.setActive(true);
+      user.setEmail(userDto.getEmail());
+      user.setPassword(userDto.getPassword());
+      user.setRoles(Collections.singleton(UserRole.UserRoleFactory()));
 
       UserEntity savedUser = userService.saveUser(user).orElseThrow(() -> {
         logger.debug("Repository method save return null");

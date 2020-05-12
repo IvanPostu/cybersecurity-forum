@@ -1,4 +1,4 @@
-debug: false
+debug: true
 
 
 spring:
@@ -11,7 +11,7 @@ spring:
     username: postgres
     password: qwerty
   jpa:
-    generate-ddl: true
+    generate-ddl: false
     show-sql: true
-    # hibernate:
-    #   ddl-auto: create
+    hibernate:
+      ddl-auto: validate

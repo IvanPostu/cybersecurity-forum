@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 import com.webapp.cybersecurityforum.domain.entity.UserEntity;
+import com.webapp.cybersecurityforum.domain.entity.UserRole;
 import com.webapp.cybersecurityforum.persistence.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,10 @@ public class UserService implements UserDetailsService {
   public Optional<UserEntity> saveUser(UserEntity user){
     UserEntity savedUser = userRepository.save(user);
     return Optional.of(savedUser);
+  }
+
+  public void addRole(UserEntity user, UserRole role){
+    
   }
 
 }
