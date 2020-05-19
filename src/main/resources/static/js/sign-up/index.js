@@ -1,7 +1,5 @@
 // import '../../libs/node_modules/vue/types/index'
 
-
-
 new Vue({
   el: '#signupPageId',
   data: {
@@ -18,12 +16,16 @@ new Vue({
         this.$refs.errorMsgPassword.remove()
         this.$refs.passwordFormInput.classList.remove('is-invalid')
       }
+      if(this.$refs.errorMsgCaptcha){
+        this.$refs.errorMsgCaptcha.remove()
+        this.$refs.captchaFormInput.classList.remove('is-invalid')
+      }
     },
     fetchCaptcha: function (){
       this.$refs.captchaLoad.classList.remove('d-none')
       this.$refs.captchaImg.classList.add('d-none')
 
-      fetch('/api/captcha')
+      fetch('/api/sign-up/captcha-generate')
         .then(res => res.json()
           .then(data => this.showCaptchaImage(data.captcha))
           .catch(e=> console.error(e))

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.webapp.cybersecurityforum.service.CaptchaService;
 
@@ -16,19 +17,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/captcha")
-public class CaptchaController {
+@RequestMapping(value = "/api/sign-up")
+public class SignUpRestController {
 
   @Autowired
   private CaptchaService captchaService;
 
-  @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<?> getCaptcha(
+  @GetMapping(value = "/captcha-generate", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<?> getSignUpCaptcha(
     HttpServletRequest request,
     HttpServletResponse response
   ){
 
-    Byte[] captchaImage = captchaService.generateCaptcha();
+    String captchaToken = captchaService.generateToken();
+    Byte[] captchaImage = captchaService.generateCaptcha(captchaToken);
+
+    HttpSession session = request.getSession();
+    session.setAttribute("SignUpCaptcha", captchaToken);
+
     Map<String, Object> result = new HashMap<>();
     result.put("captcha", captchaImage);
 

@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           "/images/**",
           "/sign-up",
           "/sign-in",
-          "/api/captcha")
+          "/api/sign-up/captcha-generate")
         .permitAll()
         .anyRequest()
         .authenticated()

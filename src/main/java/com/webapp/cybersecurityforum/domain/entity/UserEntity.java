@@ -37,10 +37,8 @@ public class UserEntity implements UserDetails {
   @Column(name = "id", unique = true)
   private Long id;
 
-  @NotBlank(message = "Email cannot be empty.")
   private String email;
 
-  @NotBlank(message = "Password cannot be empty.")
   private String password;
 
   private Boolean active;

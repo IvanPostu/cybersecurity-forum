@@ -10,7 +10,13 @@
     <div th:replace="pages/home/header-jumbotron-fragment :: jumbotron"></div>
 
     <div class="container">
-      <div th:replace="pages/home/main-card-fragment :: main-card"></div>
+      <div th:replace="pages/home/main-card-fragment :: main-card('images/roses.jpg', 
+      'This is title of the news', 
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+      doloremque, totam
+      rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+      dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.',
+      '19/08/2016')"></div>
     </div>
   </section>
 

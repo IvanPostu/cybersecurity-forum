@@ -36,11 +36,11 @@ public final class UserRole {
     this.role = role;
   }
 
-  public static UserRole UserRoleFactory(){
+  public static UserRole RoleUser(){
     return new UserRole((short)Role.USER.ordinal(), Role.USER);
   }
 
-  public static UserRole AdminRoleFactory(){
+  public static UserRole RoleAdmin(){
     return new UserRole((short)Role.ADMIN.ordinal(), Role.ADMIN);
   }
 

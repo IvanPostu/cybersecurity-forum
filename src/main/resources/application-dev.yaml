@@ -1,5 +1,17 @@
-debug: true
+debug: false
 
+logging: 
+  level: 
+    com: 
+      webapp:
+        cybersecurityforum:
+          controller: DEBUG
+
+captcha:
+  alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+  length:
+    min: 6
+    max: 8
 
 spring:
   profiles: 
