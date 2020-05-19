@@ -6,13 +6,11 @@ logging:
       webapp:
         cybersecurityforum:
           controller: DEBUG
-
 captcha:
   alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
   length:
     min: 6
     max: 8
-
 spring:
   profiles: 
     active: DEV
@@ -27,3 +25,15 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: validate
+  mail:
+    host: smtp.gmail.com
+    transport:
+      protocol: smtps
+    port: 465
+    smtp:
+      auth: true
+      starttls:
+        enable: true
+    default-encoding: UTF-8
+    debug: false
+    

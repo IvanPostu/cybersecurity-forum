@@ -45,3 +45,5 @@ pg_data
 out/
 /src/main/resources/static/libs/node_modules
 /src/main/resources/static/libs/package-lock.json
+
+**/secret.properties

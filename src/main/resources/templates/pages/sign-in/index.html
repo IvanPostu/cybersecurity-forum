@@ -12,15 +12,20 @@
     <div class="row justify-content-center">
       <div class="col-12 col-sm-10 col-md-8 col-lg-6">
 
-        <form class="text-center border border-light p-5 grey lighten-5 rounded" 
-        th:action="@{/sign-in}" method="POST">
+        <form class="text-center border border-light p-5 grey lighten-5 rounded" th:action="@{/sign-in}" method="POST">
 
           <p class="h4 mb-4">Sign in</p>
 
-          <input name="email" id="usernameFormInput" class="form-control mb-4" placeholder="E-mail" autocomplete="off">
+          <input th:value="${email}" name="email" id="usernameFormInput" class="form-control mb-4" placeholder="E-mail" autocomplete="off">
+          <th:block th:if="${enterCodeWithPassword}">
+            <input type="hidden" name="enterCodeWithPassword" value="true">
+
+            <input name="codeEmail" type="text" id="codeEmailFormInput" class="form-control mb-4"
+              placeholder="Code from email message" autocomplete="off">
+          </th:block>
 
           <input name="password" type="password" id="passwordFormInput" class="form-control mb-4"
-            placeholder="Password" autocomplete="off">
+          placeholder="Password" autocomplete="off">
 
           <div class="d-flex justify-content-around">
             <div>
