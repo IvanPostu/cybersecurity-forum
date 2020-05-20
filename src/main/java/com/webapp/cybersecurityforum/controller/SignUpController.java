@@ -71,10 +71,12 @@ public class SignUpController {
     user.setPassword(userDto.getPassword());
     user.setRoles(Collections.singleton(UserRole.RoleUser()));
 
-    UserEntity savedUser = userService.saveUser(user).orElseThrow(() -> {
-      logger.debug("Repository method save return null");
-      return new ResponseStatusException(HttpStatus.BAD_REQUEST, "Sign up error.");
-    });
+    UserEntity savedUser = userService
+      .saveUser(user, userDto.getFirstName(), userDto.getLastName())
+      .orElseThrow(() -> {
+        logger.debug("Repository method save return null");
+        return new ResponseStatusException(HttpStatus.BAD_REQUEST, "Sign up error.");
+      });
 
     logger.debug("User has been inserted into database", savedUser);
     return "redirect:/sign-in";

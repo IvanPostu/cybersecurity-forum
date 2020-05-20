@@ -54,7 +54,7 @@ public class SignInController {
     Model model){
 
     HttpSession session = request.getSession();
-    UserDetails userFromDb = userService.loadUserByUsername(email);
+    UserEntity userFromDb = (UserEntity)userService.loadUserByUsername(email);
 
     if(!userFromDb.getPassword().equals(password)){
       throw new RuntimeException("Password is not correct!");
@@ -84,7 +84,7 @@ public class SignInController {
 
       }
     }
-
+    
     return "pages/sign-in/index";
   }
 
