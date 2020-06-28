@@ -2,7 +2,6 @@ package com.webapp.cybersecurityforum.controller.validator;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 import com.webapp.cybersecurityforum.domain.dto.SaveUserDto;
 

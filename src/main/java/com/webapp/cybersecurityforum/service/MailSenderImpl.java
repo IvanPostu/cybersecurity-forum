@@ -6,7 +6,6 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -24,7 +23,6 @@ public class MailSenderImpl implements MailSender {
   private JavaMailSender javaMailSender;
 
   public void send(String emailTo, String subject, String message)  {
-    SimpleMailMessage mailMessage = new SimpleMailMessage();
     MimeMessage mimeMessage = javaMailSender.createMimeMessage();
     MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
 

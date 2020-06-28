@@ -55,7 +55,11 @@
   "workbench.colorCustomizations": {
     "editorWarning.foreground": "#ff9100",
     "editorError.foreground": "#ff0000",
-    "editorError.border": "#b80000"
+    "editorError.border": "#b80000",
+    
+    "statusBar.background" : "#4d4b57",
+    "statusBar.noFolderBackground" : "#212121",
+    "statusBar.debuggingBackground": "#263238"
   },
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
